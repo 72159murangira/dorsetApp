@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # Check if there is instance running with the image name we are deploying
-CURRENT_INSTANCE = $(docker ps -a -q --filter ancestor="$IMAGE_NAME" --format="{{.ID}}")
+$CURRENT_INSTANCE = $(docker ps -a -q --filter ancestor="$IMAGE_NAME" --format="{{.ID}}")
 
 # if an instance does exist stop the instance
 if [ "$CURRENT_INSTANCE" ]
