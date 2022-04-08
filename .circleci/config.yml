@@ -63,7 +63,7 @@ jobs:
           command: docker start integration_app
       - run:
           name: run-zap-scan-against-container
-          command: CONTAINER_IP=${docker inspect integration_app --format='{{range.NetworkSettings.Networks}}{{.IPAddress}}{{end}}');
+          command: CONTAINER_IP=$(docker inspect integration_app --format='{{range.NetworkSettings.Networks}}{{.IPAddress}}{{end}}');
 
   deploy:
     docker:
