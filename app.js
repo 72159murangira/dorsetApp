@@ -10,11 +10,9 @@ var mathRouter = require('./routes/math');
 var app = express();
 var csrfProtection = csrf({ cookie: true })
 
-
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
-
 
 app.disable('x-powered-by');
 app.use(logger('dev'));
@@ -41,7 +39,6 @@ app.use(function (req, res, next) {
   res.locals.csrftoken = req.csrfToken();
   next();
 });
-
 
 app.use('/', indexRouter);
 app.use('/math', mathRouter);
