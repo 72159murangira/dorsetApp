@@ -15,7 +15,7 @@ docker pull $IMAGE_NAME
 CONTAINER_EXISTS=$(docker ps -a | grep node_app)
 if [ "$CONTAINER_EXISTS" ]
 then
-  docker rm
+  docker rm node_app
 fi
 
 #Create a container called node_app that is available on port 8443 from our docker image

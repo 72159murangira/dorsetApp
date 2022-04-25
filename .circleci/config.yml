@@ -41,10 +41,13 @@ jobs:
          name: audit-packages
          command: npm audit
       - run:
+         name: test-run
+         command: npm run test
+      - run:
           name: docker-login
           command: docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
       - run:
-          name: Build-docker-image
+          name: build-docker-image
           command: docker build -t $IMAGE_NAME:latest .
       - run:
           name: publish-docker-image
